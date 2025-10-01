@@ -1,0 +1,25 @@
+Slack User
+   |
+   |  @QARoboBot run regression tests for delta on prod
+   v
+Slack App
+   |
+   |  POST /slack/events
+   v
+Flask Endpoint
+   |
+   |  agent.handle_command(text)
+   v
+AI Agent (Gemini)
+   |  parse_command() → extract params
+   |  trigger_jenkins() → POST to Jenkins
+   v
+Jenkins Job Triggered
+   |
+   |  Result (success/failure)
+   v
+Flask Endpoint
+   |
+   |  JSON {"text": "..."}
+   v
+Slack User sees response
